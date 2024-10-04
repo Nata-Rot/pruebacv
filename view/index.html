@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Vida - Natali Pacheco</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body class="d-flex flex-column h-100">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">Natali Pacheco</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="loadContent('index')">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="loadContent('educacion')">Educación</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="flex-shrink-0">
+        <div class="container mt-4" id="content">
+            <!-- El contenido cargado dinámicamente irá aquí -->
+        </div>
+        <!-- <button class="btn btn-primary mt-4" onclick="loadContent('index')">Home</button> -->
+    </main>
+    
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <h2 class="h5">Contacto</h2>
+            <p class="mb-1">Correo: natalipacheco2012@gmail.com</p>
+            <p class="mb-1">Teléfono: +57 312 387 8521</p>
+            <p class="mb-0">Redes Sociales: <a href="https://github.com/Nata-Rot" target="_blank">GitHub</a></p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const pages = {
+            index: `
+                <h1 class="mb-4">Bienvenido a mi Hoja de Vida</h1>
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Datos Personales</h2>
+                        <h3>Natali Pacheco</h3>
+                        <h3>Fecha de nacimiento: 15 de septiembre de 1995</h3>
+                        <h3>Lugar de nacimiento: Bogotá, Colombia</h3>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Perfil</h2>
+                        <p class="card-text">Desarrolladora de software con más de 3 años de experiencia, especializada en crear sistemas de información eficientes que satisfacen necesidades empresariales. Poseo habilidades analíticas sólidas y una pasión por resolver problemas complejos mediante soluciones innovadoras. Mi capacidad para trabajar en equipo y adaptarme rápidamente a nuevas tecnologías me permite contribuir significativamente en proyectos desafiantes.</p>
+                        <h3>Idiomas:</h3>
+                        <ul>
+                            <li>Español (Nativo)</li>
+                            <li>Inglés (A2)</li>
+                        </ul>
+                    </div>
+                </div>
+            `,
+            educacion: `
+                <h1 class="mb-4">Educación</h1>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Universidad Ecci</h2>
+                        <h3 class="card-subtitle mb-2 text-muted">Ingeniería de Sistemas</h3>
+                        <p class="card-text">2019 - 2024</p>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Universidad Ecci</h2>
+                        <h3 class="card-subtitle mb-2 text-muted">Tecnología en Desarrollo de Software</h3>
+                        <p class="card-text">2019 - 2022</p>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Sena</h2>
+                        <h3 class="card-subtitle mb-2 text-muted">Tecnología en Redes</h3>
+                        <p class="card-text">2014 - 2017</p>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Frontend Training - Multisponsor Sas</h2>
+                        <h3 class="card-subtitle mb-2 text-muted">Desarrollo de sitios web y campañas publicitarias</h3>
+                        <p class="card-text">2021</p>
+                    </div>
+                </div>
+            `
+        };
+
+        function loadContent(page) {
+            const content = pages[page];
+            if (content) {
+                document.getElementById('content').innerHTML = content;
+            } else {
+                document.getElementById('content').innerHTML = '<p>Error al cargar el contenido.</p>';
+            }
+        }
+
+        window.onload = function() {
+            loadContent('index');
+        };
+    </script>
+</body>
+</html>
